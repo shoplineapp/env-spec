@@ -3,7 +3,10 @@ $:.push File.expand_path('../lib', __FILE__)
 # Force to load simplecov before requiring any file (say the version file)
 if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
+  require 'coveralls'
+
   SimpleCov.start 'rails'
+  Coveralls.wear!
 end
 
 require 'env-spec/version'
