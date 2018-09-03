@@ -26,5 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails'
 
   s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'rspec_junit_formatter'
   s.add_development_dependency 'simplecov'
 end
