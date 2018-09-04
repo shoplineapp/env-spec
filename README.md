@@ -1,5 +1,10 @@
 # Env Spec
 
+[![CircleCI](https://circleci.com/gh/shoplineapp/env-spec/tree/master.svg?style=shield)](https://circleci.com/gh/shoplineapp/env-spec/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/shoplineapp/env-spec/badge.svg?branch=master)](https://coveralls.io/github/shoplineapp/env-spec?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8b92add19c249c29650997cebaace5b)](https://www.codacy.com/app/shoplineapp/env-spec?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shoplineapp/env-spec&amp;utm_campaign=Badge_Grade)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
+
 ## Installation
 
 ```ruby
