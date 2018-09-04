@@ -5,6 +5,8 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8b92add19c249c29650997cebaace5b)](https://www.codacy.com/app/shoplineapp/env-spec?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shoplineapp/env-spec&amp;utm_campaign=Badge_Grade)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
 
+This gem will check specified environment variables are correctly set, useful when you rely on environment variables to toggle logic or endpoint for different environments.
+
 ## Installation
 
 ```ruby
