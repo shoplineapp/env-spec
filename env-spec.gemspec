@@ -5,8 +5,13 @@ if ENV['RAILS_ENV'] == 'test'
   require 'simplecov'
   require 'coveralls'
 
-  SimpleCov.start 'rails'
-  Coveralls.wear!
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    SimpleCov::Formatter::HTMLFormatter,
+    Coveralls::SimpleCov::Formatter
+  ]
+  SimpleCov.start 'rails' do
+    add_filter 'lib/generators'
+  end
 end
 
 require 'env-spec/version'

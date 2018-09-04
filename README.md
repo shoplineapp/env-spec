@@ -13,22 +13,20 @@ gem 'env-spec', git: 'https://github.com/shoplineapp/env-spec'
 
 ## Configuration
 
-Create a yml file to specify environment variables used in the project with options  
-
-Sample config file `config/env.yml`
-```yml
-raise_error: true
-variables: # Environment variable name as key
-  APP_HOST:
-    required: true
-  APP_MODE:
-    required: true
-    inclusion:
-      - default
-      - worker
-  ID_CONVENTION:
-    pattern: '[a-zA-Z0-9]{5}'
+Create a yml file to specify environment variables used in the project with specification with generator  
+```bash
+rails generate env_spec:create_config_file
 ```
+By default the generator will grep environment variable usage from `app`, `config` and `lib` folders and add them into the specification with `required: false`. You might check `config/env.yml` and update setting for each environment variables  
+
+EnvSpec provide following attributes for each environment variable
+
+| Option | Description |
+| --- | --- |
+| description | Short usage summary of the variable |
+| required | Specify if the variable is required |
+| inclusion | Validate value with specified values in array |
+| pattern | Validate value with regex |
 
 ## Usage
 

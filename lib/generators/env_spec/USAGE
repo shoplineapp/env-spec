@@ -1,0 +1,8 @@
+Description:
+    This generator will grep environment variable usage and generate config file
+
+Example:
+    rails generate env_spec:create_config_file
+
+    This will create:
+        config/env.yml
