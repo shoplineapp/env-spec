@@ -34,23 +34,31 @@ module EnvSpec
     end
 
     def valid?
-      if missing?
-        return true if required? == false
-        raise InvalidVariableError.new(key, 'Missing value')
-      end
-
-      if @pattern.present? && value.match(Regexp.new(@pattern)).nil?
-        raise InvalidVariableError.new(key, "Failed on validating pattern #{@validate}")
-      end
-
-      if @inclusion.present? && (@inclusion || []).exclude?(value)
-        raise InvalidVariableError.new(key, "Failed on validating value #{value}")
-      end
+      validate_missing
+      validate_pattern
+      validate_inclusion
 
       true
     rescue InvalidVariableError => e
       @error = e
       false
+    end
+
+    private
+
+    def validate_missing
+      return if !missing? || (missing? && required? == false)
+      raise InvalidVariableError.new(key, 'Missing value')
+    end
+
+    def validate_pattern
+      return unless @pattern.present? && value.match(Regexp.new(@pattern)).nil?
+      raise InvalidVariableError.new(key, "Failed on validating pattern #{@validate}")
+    end
+
+    def validate_inclusion
+      return unless @inclusion.present? && (@inclusion || []).exclude?(value)
+      raise InvalidVariableError.new(key, "Failed on validating value #{value}")
     end
   end
 end

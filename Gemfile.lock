@@ -5,7 +5,7 @@ PATH
       rails
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actioncable (5.2.1)
       actionpack (= 5.2.1)
@@ -63,6 +63,9 @@ GEM
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
+    generator_spec (0.9.4)
+      activesupport (>= 3.0.0)
+      railties (>= 3.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -173,6 +176,7 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   env-spec!
+  generator_spec
   rspec-rails
   rspec_junit_formatter
   simplecov
